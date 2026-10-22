@@ -15,9 +15,9 @@ enforces the family's own rules, and fixes clashes with one tap. Built for the A
 
 [Try Hearth Live](https://hearth-kyqsvmgprrttlykae6camq.streamlit.app/)
 
-## Application Preview
+## 📸 Application Preview
 
-![Hearth Dashboard](docs/img/hearth-dashboard.png)
+![Hearth Dashboard](hearth-dashboard.png)
 
 <!-- Add a screenshot or GIF her<img width="2558" height="1240" alt="image" src="https://github.com/user-attachments/assets/1f13c77b-d26e-4a73-a4b7-6b574a5d974b" />
 e: ![Hearth demo](docs/img/demo.png) -->
