@@ -10,7 +10,7 @@
 Hearth is a self-hosted **MCP server** and **Agent Skill** that lets a whole family manage plans by voice or text,
 enforces the family's own rules, and fixes clashes with one tap. Built for the Alexa+ track of the Amazon hackathon.
 
-**[Live demo on Streamlit](   https://hearth-kyqsvmgprrttlykae6camq.streamlit.app/)** · [Demo script](#demo-script-under-3-minutes)
+**[Live demo on Streamlit](   https://hearth-kyqsvmgprrttlykae6camq.streamlit.app/)**[Demo script](#demo-script-under-3-minutes)
 
 <!-- Add a screenshot or GIF here: ![Hearth demo](docs/img/demo.png) -->
 
