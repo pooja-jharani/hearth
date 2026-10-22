@@ -1,0 +1,26 @@
+# Each case replays `given` (earlier utterances, same speaker unless noted), then checks the FIRST
+# meaningful tool call of `say` (list_events / list_members are plumbing and ignored).
+# `args` is a subset match; strings match if they contain the expected text (case-insensitive).
+- {speaker: Mom, say: "Rohan's PTM is Thursday at 5 at school", tool: add_event, args: {attendees: [Rohan], needs_adult: true, movable: false}}
+- {speaker: Dad, say: "I have a client call Thursday 5 to 6", tool: add_event, args: {created_by: Dad, title: client call}}
+- {speaker: Mom, say: "Tuesday gym at 7, Wednesday tuition 6 to 7, Friday Nani's birthday dinner", tool: add_events_bulk}
+- {speaker: Mom, say: "Dentist tomorrow at 10 am", tool: add_event, args: {title: dentist}}
+- {speaker: Mom, say: "Dad has a meeting Friday from 2 to 3 pm", tool: add_event, args: {attendees: [Dad]}}
+- {speaker: Dad, say: "What can we do?", given: ["Rohan's PTM is Thursday at 5 at school", "I have a client call Thursday 5 to 6"], tool: suggest_resolutions}
+- {speaker: Dad, say: "Move the call to 6:30", given: ["Rohan's PTM is Thursday at 5 at school", "I have a client call Thursday 5 to 6"], tool: move_event}
+- {speaker: Dad, say: "yes", given: ["Rohan's PTM is Thursday at 5 at school", "I have a client call Thursday 5 to 6", "Move the call to 6:30"], tool: commit_action}
+- {speaker: Dad, say: "undo", given: ["I have a client call Thursday 5 to 6"], tool: undo_last}
+- {speaker: Mom, say: "Dadi can't do evening pickups", tool: add_rule, args: {member: Dadi, kind: no_after, time: "17:00", task: pickup}}
+- {speaker: Mom, say: "Dad won't do school runs after 6 pm", tool: add_rule, args: {member: Dad, kind: no_after, time: "18:00"}}
+- {speaker: Mom, say: "Dadi will pick up Rohan from tuition Friday at 6", tool: add_event, args: {attendees: [Dadi, Rohan]}}
+- {speaker: Mom, say: "What are the family rules?", tool: list_rules}
+- {speaker: Mom, say: "Who should do dishes?", tool: assign_chore, args: {title: dishes, kid_ok: true}}
+- {speaker: Mom, say: "Who should do the laundry?", tool: assign_chore, args: {title: laundry}}
+- {speaker: Mom, say: "What's happening this week?", tool: family_summary, args: {range: week}}
+- {speaker: Mom, say: "What's on tomorrow?", tool: family_summary, args: {range: tomorrow}}
+- {speaker: Mom, say: "Any risks next week?", tool: week_guard}
+- {speaker: Mom, say: "Who is free Friday for 2 hours?", tool: find_free_slot, args: {duration_min: 120}}
+- {speaker: Mom, say: "Delete the family lunch", tool: delete_event}
+- {speaker: Dad, say: "How is the planning load?", tool: planning_load}
+- {speaker: Dad, say: "What's waiting for approval?", tool: list_pending_approvals}
+- {speaker: Mom, say: "Circular: Annual Day on Nov 5 at 10 am. PTM on 12 Nov 4 pm", tool: add_events_bulk}

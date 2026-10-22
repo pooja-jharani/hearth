@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hearth"
+version = "0.1.0"
+description = "Hearth: a voice-first family coordinator MCP server, Agent Skill and Streamlit app."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+  "mcp==1.30.0",
+  "sqlmodel>=0.0.22",
+  "streamlit>=1.40",
+  "streamlit-calendar>=1.3",
+  "strands-agents>=1.0",
+  "boto3>=1.35",
+  "pyyaml>=6",
+  "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[tool.setuptools]
+packages = ["server", "server.services", "app", "family_conflicts"]
+
+[tool.setuptools.package-dir]
+family_conflicts = "packages/family_conflicts/family_conflicts"
+
+[tool.pytest.ini_options]
+pythonpath = [".", "packages/family_conflicts"]
+testpaths = ["tests", "packages/family_conflicts/tests"]
+
+[tool.ruff]
+line-length = 120
+extend-exclude = [".venv"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E402", "E712", "E501"]
