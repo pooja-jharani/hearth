@@ -12,6 +12,7 @@ from app import ics, ui, voice
 from app.agent import HearthAgent, update_state
 from app.backend import MCPBackend
 from app.cards import cards_from_events, conflict_cards
+from app.embedded import ensure_server
 from app.lanes import auto_day_window, focus_window, lanes_html
 from app.types import ToolEvent
 from server.services.common import TZ, now
@@ -26,9 +27,16 @@ SAMPLES = ["Rohan's PTM is Thursday at 5 at school", "I have a client call Thurs
 
 
 # ------------------------------------------------------------------ services
+@st.cache_resource
+def _server():
+    ensure_server()
+    return True
+
+
 def boot():
     if "backend" in st.session_state:
         return
+    _server()
     url = os.getenv("HEARTH_MCP_URL", f"http://127.0.0.1:{os.getenv('HEARTH_PORT', '8765')}/mcp")
     backend = MCPBackend(url)
     try:

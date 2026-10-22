@@ -2,7 +2,7 @@
 
 **The family calendar that talks back and catches problems before they happen.**
 
-[![CI](https://github.com/your-real-username/hearth/actions/workflows/ci.yml/badge.svg)](https://github.com/your-real-username/hearth/actions/workflows/ci.yml)
+[![CI](https://github.com/pooja-jharani/hearth/actions/workflows/ci.yml/badge.svg)](https://github.com/pooja-jharani/hearth/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![MCP](https://img.shields.io/badge/MCP-Streamable%20HTTP-5b4fe9)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -10,7 +10,9 @@
 Hearth is a self-hosted **MCP server** and **Agent Skill** that lets a whole family manage plans by voice or text,
 enforces the family's own rules, and fixes clashes with one tap. Built for the Alexa+ track of the Amazon hackathon.
 
-<!-- Add a screenshot or GIF here: ![Hearth demo](docs/img/demo.gif) -->
+**[Live demo on Streamlit](STREAMLIT_URL)** · [Demo script](docs/demo_script.md)
+
+<!-- Add a screenshot or GIF here: ![Hearth demo](docs/img/demo.png) -->
 
 ## The problem
 
@@ -133,4 +135,4 @@ docs/                        AWS integration, demo script, judge Q&A, design not
 
 ## License
 
-MIT. Built by [Pooja Jharani](https://github.com/your-real-username), 2026.
+MIT. Built by [Pooja Jharani](https://github.com/pooja-jharani), 2026.
