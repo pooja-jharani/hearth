@@ -2,7 +2,7 @@
 
 Everything below runs on the real MCP server and real tools. The Alexa+ device is **not** involved: the "voice" is the
 text box (and Polly playback only if AWS credentials are set). Say so in the video.
-Reset first: `python run.py --reset`. Set `DEMO_NOW=2026-10-20T10:00:00+05:30` for a repeatable week.
+Reset first: `python run.py --reset`. Set `HEARTH_NOW=2026-10-20T10:00:00+05:30` for a repeatable week.
 
 | Time | Do | Say |
 |---|---|---|
