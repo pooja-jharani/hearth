@@ -29,7 +29,7 @@ e: ![Hearth demo](docs/img/demo.png) -->
 - Amazon Polly spoken replies: `app/`
 - Agent Skill: `skills/family-coordinator/SKILL.md`
 - Run it: `python run.py` (see Quick start below)
-- 
+  
 ## The problem
 
 Every family has one person who holds the whole week in their head: who has a meeting, who can pick up the kids,
